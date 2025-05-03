@@ -1,0 +1,31 @@
+<div class="row px-4 py-4">
+  <div class="col-12">
+    <app-table
+      [tableData]="users"
+      [columnData]="['name', 'username', 'email', 'phone', 'website','action']"
+    ></app-table>
+    <!-- <table class="table table-bordered table-striped">
+      <thead class="">
+        <tr>
+          <th>sr No</th>
+          <th>Name</th>
+          <th>UserName</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.website }}</td>
+        </tr>
+      </tbody>
+    </table> -->
+  </div>
+</div>

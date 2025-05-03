@@ -1,59 +1,47 @@
-# ReusableTable
+# 1️⃣ Setup Phase (Data Fetching)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+**Goal:** Fetch data and display in a table.
 
-## Development server
+**Pattern:**
 
-To start a local development server, run:
+- Use `HttpClient` to fetch data.
+- Store data in a variable (array).
+- Display the data in a table via a component template.
 
-```bash
-ng serve
-```
+**Flow:**
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Create a component.
+2. In the TypeScript file, use `ngOnInit` to call the API and store the data in an array.
+3. Use `HttpClient` to interact with the JSONPlaceholder API.
+4. In the HTML file, build a table template to display the data.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+# 2️⃣ Reusable Table Component
 
-```bash
-ng generate component component-name
-```
+**Goal:** Make the table reusable across different components.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**Pattern:**
 
-```bash
-ng generate --help
-```
+- Create a reusable component that can display dynamic data.
+- Use `@Input` to pass data to the reusable table.
 
-## Building
+**Flow:**
 
-To build the project run:
+1. Create a new Angular component for the table (e.g., `reusable-table`).
+2. Move your static table template to the reusable table component.
+3. Use `@Input` in the table component to allow it to accept dynamic data from the parent component.
+4. The table head and body will be dynamic based on the passed data, allowing the component to be reusable.
 
-```bash
-ng build
-```
+# 3️⃣ Adding Actions(delete and edit functionalities).
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+**Goal:**  Add dynamic action buttons to the reusable table
 
-## Running unit tests
+**Pattern:**
+- Create the buttons in the reusable table template
+- Create Dynamic functions for the buttons
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+**Flow:**
+- create a button in the reusable table based on a condition
+- use `@output ` and `new EventEmmiter` to create the function for the buttons
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

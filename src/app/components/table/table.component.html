@@ -1,0 +1,17 @@
+<table class="table table-bordered table-striped">
+  <thead class="">
+    <tr>
+      <th>sr No</th>
+      <th *ngFor="let header of columnData">
+        {{ header }}
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of tableData; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td *ngFor="let item of columnData">{{ user[item] }}</td>
+    </tr>
+  </tbody>
+</table>
