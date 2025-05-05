@@ -1,0 +1,20 @@
+<ng-container>
+  <td>{{ index + 1 }}</td>
+
+  <td>
+    <div *ngIf="item !== 'action'">
+      {{ listData.name }}
+    </div>
+  </td>
+
+  <td>
+    {{ listData.userName }}
+  </td>
+
+  <td *ngFor="let item of listData">
+    <div *ngIf="action">
+      <button class="btn btn-success" (click)="editData(user)">Edit</button>
+      <button class="btn btn-danger" (click)="deleteData(user)">Delete</button>
+    </div>
+  </td>
+</ng-container>

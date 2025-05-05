@@ -2,7 +2,9 @@
   <div class="col-12">
     <app-table
       [tableData]="users"
-      [columnData]="['name', 'username', 'email', 'phone', 'website','action']"
+      [columnData]="['name', 'username', 'email', 'phone', 'website', 'action']"
+      (onDelete)="deleteUsers($event)"
+      (onEdit)="editUsers($event)"
     ></app-table>
     <!-- <table class="table table-bordered table-striped">
       <thead class="">

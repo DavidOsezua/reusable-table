@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { TableComponent } from "../table/table.component";
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-users',
@@ -11,7 +11,6 @@ import { TableComponent } from "../table/table.component";
 })
 export class UsersComponent implements OnInit {
   users: any[] = [];
-
 
   // private httpClient = inject(HttpClient);
 
@@ -27,5 +26,13 @@ export class UsersComponent implements OnInit {
       .subscribe((res: any) => {
         this.users = res;
       });
+  }
+
+  editUsers(item: any): void {
+    debugger;
+  }
+
+  deleteUsers(item: any): void {
+    debugger;
   }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -10,4 +10,17 @@ import { Component, Input } from '@angular/core';
 export class TableComponent {
   @Input() tableData: any[] = [];
   @Input() columnData: string[] = [];
+
+  @Output() onEdit = new EventEmitter();
+  @Output() onDelete = new EventEmitter();
+
+  editData(item: any): void {
+    debugger;
+    this.onEdit.emit(item);
+  }
+
+  deleteData(item: any): void {
+    debugger;
+    this.onDelete.emit(item);
+  }
 }

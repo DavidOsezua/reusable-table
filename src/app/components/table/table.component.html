@@ -11,7 +11,19 @@
   <tbody>
     <tr *ngFor="let user of tableData; let i = index">
       <td>{{ i + 1 }}</td>
-      <td *ngFor="let item of columnData">{{ user[item] }}</td>
+
+      <td *ngFor="let item of columnData">
+        <div *ngIf="item === 'action'">
+          <button class="btn btn-success" (click)="editData(user)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteData(user)">
+            Delete
+          </button>
+        </div>
+
+        <div *ngIf="item !== 'action'">
+          {{ user[item] }}
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
